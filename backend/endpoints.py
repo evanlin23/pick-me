@@ -5,6 +5,10 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World'
 
+@app.route('/utils')
+def hello_utils():
+    return 'Hello utils'
+
 if __name__ == '__main__':
     app.run()
 
