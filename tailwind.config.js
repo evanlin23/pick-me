@@ -8,7 +8,10 @@ export default {
   ],
   theme: {
     colors: {
-      turquoise: "#7FB5B5"
+      turquoise: "#7FB5B5",
+      blue: "#89cff0",
+      purple: "#ca9bf7",
+      blue_green: "#9adedb",
     },
     extend: {},
   },
