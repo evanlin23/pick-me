@@ -16,6 +16,10 @@ def hello_utils():
 @app.route("/test", methods=["GET"])
 def test():
     return "Hello"
+@app.route('/coords', methods=['POST'])
+def processCoords():
+    print("received coords")
+    print(request.json()) # theoretically should be the coordinates
 
 
 if __name__ == "__main__":
