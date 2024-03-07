@@ -51,12 +51,16 @@ def recommend_restaurant(model, user_preferences):
 
 # temp location api code
 def get_nearby_restaurants(latitude, longitude, radius=1000, type='restaurant', key='YOUR_API_KEY'):
-    url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius={radius}&type={type}&key={key}"
-    response = requests.get(url)
-    data = response.json()
-    if 'results' in data:
-        return [place['name'] for place in data['results']]
-    else:
+    try:
+        url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius={radius}&type={type}&key={key}"
+        response = requests.get(url)
+        data = response.json()
+        if 'results' in data:
+            return [place['name'] for place in data['results']]
+        else:
+            return []
+    except Exception as e:
+        print(f"An error occurred: {e}")
         return []
 
 # model parameters
